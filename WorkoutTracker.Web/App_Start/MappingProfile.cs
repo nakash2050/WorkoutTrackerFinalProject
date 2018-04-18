@@ -1,6 +1,7 @@
 ﻿using AutoMapper;
 using WorkoutTracker.Entities;
 using WorkoutTracker.Entities.DTO;
+using WorkoutTracker.Web.ViewModels;
 
 namespace WorkoutTracker.Web.App_Start
 {
@@ -14,6 +15,8 @@ namespace WorkoutTracker.Web.App_Start
             CreateMap<WorkoutCollection, WorkoutDTO>();
             CreateMap<WorkoutActive, WorkoutActiveDTO>();
             CreateMap<WorkoutActiveDTO, WorkoutActive>();
+            CreateMap<WorkoutDTO, WorkoutActiveViewModel>();
+            CreateMap<WorkoutActiveViewModel, WorkoutActiveDTO>();
         }
     }
 }

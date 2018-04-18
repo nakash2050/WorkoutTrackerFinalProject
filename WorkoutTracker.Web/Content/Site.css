@@ -125,4 +125,14 @@ input[type="checkbox"].input-validation-error {
     color:black !important;
     font-family: 'Oswald', sans-serif;
     font-weight: bold;
+    background-color: #2acef1 !important;
+}
+
+.workout-init {
+    display: flex;
+    justify-content: space-between;
+}
+
+.btn-workout-md {
+    width: 100px;
 }

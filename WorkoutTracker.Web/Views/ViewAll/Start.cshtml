@@ -1,0 +1,59 @@
+﻿@model WorkoutTracker.Web.ViewModels.WorkoutActiveViewModel
+
+@{
+    ViewBag.Title = "Start";
+}
+@section scripts
+{
+    <script src="~/Scripts/app/start-workout.js"></script>
+}
+@using (Html.BeginForm())
+{
+    @Html.AntiForgeryToken()
+
+    <div class="form-horizontal">
+        <h4>Start Workout</h4>
+        <hr />
+        @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+        @Html.HiddenFor(model => model.WorkoutId)
+        <div class="form-group">
+            @Html.LabelFor(model => model.WorkoutTitle, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.TextBoxFor(model => model.WorkoutTitle, new { @class = "form-control", @readonly = "true" })
+                @Html.ValidationMessageFor(model => model.WorkoutTitle, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.WorkoutNote, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.TextAreaFor(model => model.WorkoutNote, new { @class = "form-control", @style = "width:100%", @readonly = "true" })
+                @Html.ValidationMessageFor(model => model.WorkoutNote, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-inline" style="margin-left:150px">
+            <div class="form-group">
+                @Html.LabelFor(model => model.StartDate, htmlAttributes: new { @class = "col-md-4" })
+                <div class="col-md-10">
+                    @Html.TextBoxFor(model => model.StartDate, new { @type = "date", @class = "form-control", @id = "txtStartDate" })
+                    @Html.ValidationMessageFor(model => model.StartDate, "", new { @class = "text-danger" })
+                </div>
+            </div>
+            <div class="form-group">
+                @Html.LabelFor(model => model.StartTime, htmlAttributes: new { @class = "col-md-5" })
+                <div class="col-md-10">
+                    @Html.TextBoxFor(model => model.StartTime, new { @type = "time", @class = "form-control", @style = "width:175px", @id = "txtStartTime", @step = "1" })
+                    @Html.ValidationMessageFor(model => model.StartTime, "", new { @class = "text-danger" })
+                </div>
+            </div>
+        </div>
+        <br />
+        <div style="margin-left:150px">
+            <input type="submit" value="Start" class="btn btn-success btn-lg add-category" />
+            <input type="submit" value="Cancel" class="btn btn-danger btn-lg add-category" />
+        </div>
+
+    </div>
+}
+

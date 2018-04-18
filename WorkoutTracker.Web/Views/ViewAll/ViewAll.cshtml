@@ -14,9 +14,11 @@
             <div class="panel panel-success">
                 <div class="panel-heading workout-panel-heading">@workout.WorkoutTitle</div>
                 <div class="panel-body">
-                    <div>
-                        @Html.ActionLink("Edit", "EditWorkout", new { id = workout.WorkoutId }, new { @class = "btn btn-primary" })
-                        <button type="button" class="btn btn-primary" onclick="deleteWorkout(@workout.WorkoutId)">Delete</button>
+                    <div class="workout-init">
+                        @Html.ActionLink("Edit", "EditWorkout", new { id = workout.WorkoutId }, new { @class = "btn btn-primary btn-workout-md" })
+                        <button type="button" class="btn btn-danger btn-workout-md" onclick="deleteWorkout(@workout.WorkoutId)">Delete</button>
+                        @Html.ActionLink("Start", "StartWorkout", new { id = workout.WorkoutId }, new { @class = "btn btn-success btn-workout-md" })
+                        @Html.ActionLink("End", "EditWorkout", new { id = workout.WorkoutId }, new { @class = "btn btn-warning btn-workout-md" })
                     </div>
                 </div>
             </div>

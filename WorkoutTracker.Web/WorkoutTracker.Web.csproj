@@ -164,6 +164,7 @@
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="ViewModels\CategoryViewModel.cs" />
+    <Compile Include="ViewModels\WorkoutActiveViewModel.cs" />
     <Compile Include="ViewModels\WorkoutViewModel.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -177,6 +178,7 @@
     <Content Include="Scripts\app\create.js" />
     <Content Include="Scripts\app\edit-workout.js" />
     <Content Include="Scripts\app\global.js" />
+    <Content Include="Scripts\app\start-workout.js" />
     <Content Include="Scripts\app\view-all.js" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
@@ -208,6 +210,7 @@
     <Content Include="Views\Shared\_CategorySearch.cshtml" />
     <Content Include="Views\Create\Create.cshtml" />
     <Content Include="Views\ViewAll\Edit.cshtml" />
+    <Content Include="Views\ViewAll\Start.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

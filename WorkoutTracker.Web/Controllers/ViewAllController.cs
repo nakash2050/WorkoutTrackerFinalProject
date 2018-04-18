@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using AutoMapper;
+using System.Collections.Generic;
 using System.Web.Mvc;
 using WorkoutTracker.BAL;
 using WorkoutTracker.Entities.DTO;
@@ -60,7 +61,25 @@ namespace WorkoutTracker.Web.Controllers
 
         public ActionResult StartWorkout(int id)
         {
-            return View();
+            var workoutDTO = _workoutBAL.GetWorkout(id);
+            var workout = Mapper.Map<WorkoutActiveViewModel>(workoutDTO);
+            return View("Start", workout);
+        }
+        [HttpPost]
+        public ActionResult StartWorkout(WorkoutActiveViewModel workoutModel)
+        {
+            if (ModelState.IsValid)
+            {
+                workoutModel.Status = true;
+                var workoutActiveDTO = Mapper.Map<WorkoutActiveDTO>(workoutModel);
+                var result = _workoutBAL.StartWorkout(workoutActiveDTO);
+                if(result)
+                {
+                    return RedirectToAction("Index");
+                }
+            }
+
+            return RedirectToAction("StartWorkout", workoutModel.WorkoutId);
         }
 
         public ActionResult EndWorkout(int id)
