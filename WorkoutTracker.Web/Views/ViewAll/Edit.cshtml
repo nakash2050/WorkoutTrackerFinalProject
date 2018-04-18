@@ -4,15 +4,12 @@
     ViewBag.Title = "Edit";
 }
 
+<script src="~/Scripts/app/edit-workout.js"></script>
+
 @section scripts
 {
     <script>
-        function loadCategoriesModal() {
-            var id = $(this).data('assigned-id');
-            var route = '@Url.Action("CategoryModal", "Category")?id=1';
-            $('#partial').load(route);
-            $('#txtTitle').focus();
-        }
+       
     </script>
 }
 
@@ -76,7 +73,7 @@
                 <div id="partial"></div>
             </div>
             <div class="modal-footer">
-                <button type="button" class="btn btn-secondary btn-danger" data-dismiss="modal" onclick="reload()">Close</button>
+                <button type="button" class="btn btn-secondary btn-danger" data-dismiss="modal" onclick="reloadCategories()">Close</button>
             </div>
         </div>
     </div>

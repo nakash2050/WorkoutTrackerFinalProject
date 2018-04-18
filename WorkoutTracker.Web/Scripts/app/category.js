@@ -5,10 +5,11 @@
 }
 );
 
-function filterCategories() {
+function filterCategories(controllerName) {
     var title = $('#search').val();
-
-    $.get('./Category/CategoryFilter?title=' + title, function (resp) {
+    var route = getRoute() + 'CategoryFilter?title=' + title;
+    console.log(route);
+    $.get(route, function (resp) {
         $('#categories').html(resp);
     });
 }
@@ -30,14 +31,17 @@ function editCategory(categoryId) {
         spnTitle.removeAttr('contenteditable');
 
         var request = { CategoryId: categoryId, CategoryName: spnTitle.html() };
-        $.post('./Category/UpdateCategory', request, function (resp) {
+        var route = getRoute() + 'UpdateCategory';
+        console.log(route);
+        $.post(route, request, function (resp) {
             $('#categories').html(resp);
         });
     }
 }
 
 function deleteCategory(categoryId) {
-    $.get('./Category/DeleteCategory?id=' + categoryId, function (resp) {
+    var route = getRoute() + 'DeleteCategory?id=' + categoryId;
+    $.get(route, function (resp) {
         $('#categories').html(resp);
     });
 }

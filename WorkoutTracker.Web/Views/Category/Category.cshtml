@@ -10,14 +10,14 @@
     $(document).ready(function () {
         $('#categoryForm').submit(function (e) {
             e.preventDefault();
-            var data = $(this).serialize();           
+            var data = $(this).serialize();
 
             var actionUrl = '@Url.Action("CategoryModalAdd")';
 
             $.post(actionUrl, data, function (resp) {
                 $('#txtTitle').val('');
                 $('#txtTitle').focus();
-               
+
                 if (typeof resp.errors != 'undefined') {
                     $('#txtTitle').addClass('input-validation-error');
                     console.log(resp.errors[0].ErrorMessage);
@@ -33,7 +33,7 @@
 </script>
 <h4>Add Category</h4>
 <hr />
-<div>
+<div> 
     <div class="input-group">
         <span class="input-group-addon">
             <i class="glyphicon glyphicon-search"></i>

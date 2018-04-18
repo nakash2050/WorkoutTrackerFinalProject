@@ -175,6 +175,8 @@
     <Content Include="Content\Site.css" />
     <Content Include="Scripts\app\category.js" />
     <Content Include="Scripts\app\create.js" />
+    <Content Include="Scripts\app\edit-workout.js" />
+    <Content Include="Scripts\app\global.js" />
     <Content Include="Scripts\app\view-all.js" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />

@@ -6,9 +6,11 @@
     <title>@ViewBag.Title - Workout Tracker</title>
     <link href="https://fonts.googleapis.com/css?family=Roboto+Condensed|Oswald|Graduate|Anton" rel="stylesheet">
     @Styles.Render("~/Content/css")
-    @Scripts.Render("~/bundles/modernizr")   
+    @Scripts.Render("~/bundles/modernizr")
+    <script src="~/Scripts/app/global.js"></script>
 </head>
 <body>
+    @Html.Hidden("controller", @ViewContext.RouteData.Values["controller"])
     <div class="row">
         <div class="col-md-6 col-md-offset-3">
             <div class="panel panel-primary">
@@ -16,10 +18,10 @@
                 <div class="panel-body">
                     <div class="navbar">
                         <ul class="nav nav-pills nav-justified">
-                            <li class="@(ViewContext.RouteData.Values["Controller"].ToString() == "ViewAll" ? "active" : "")">@Html.ActionLink("View All", "Index", "ViewAll")</li>
-                            <li class="@(ViewContext.RouteData.Values["Controller"].ToString() == "Create" ? "active" : "")">@Html.ActionLink("Create", "Index", "Create")</li>
-                            <li class="@(ViewContext.RouteData.Values["Controller"].ToString() == "Category" ? "active" : "")">@Html.ActionLink("Category", "Index", "Category")</li>
-                            <li class="@(ViewContext.RouteData.Values["Controller"].ToString() == "Track" ? "active" : "")">@Html.ActionLink("Track", "Index", "Track")</li>
+                            <li class="@(ViewContext.RouteData.Values["controller"].ToString() == "ViewAll" ? "active" : "")">@Html.ActionLink("View All", "Index", "ViewAll")</li>
+                            <li class="@(ViewContext.RouteData.Values["controller"].ToString() == "Create" ? "active" : "")">@Html.ActionLink("Create", "Index", "Create")</li>
+                            <li class="@(ViewContext.RouteData.Values["controller"].ToString() == "Category" ? "active" : "")">@Html.ActionLink("Category", "Index", "Category")</li>
+                            <li class="@(ViewContext.RouteData.Values["controller"].ToString() == "Track" ? "active" : "")">@Html.ActionLink("Track", "Index", "Track")</li>
                         </ul>
                     </div>
                     <div class="body-content scrollable-panel">
