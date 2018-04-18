@@ -28,18 +28,18 @@
 
 
         <div class="form-group">
-            @Html.LabelFor(model => model.Workout.Title, htmlAttributes: new { @class = "control-label col-md-2" })
+            @Html.LabelFor(model => model.Workout.WorkoutTitle, htmlAttributes: new { @class = "control-label col-md-2" })
             <div class="col-md-10">
-                @Html.TextBoxFor(model => model.Workout.Title, new { @class = "form-control" })
-                @Html.ValidationMessageFor(model => model.Workout.Title, "", new { @class = "help-block" })
+                @Html.TextBoxFor(model => model.Workout.WorkoutTitle, new { @class = "form-control" })
+                @Html.ValidationMessageFor(model => model.Workout.WorkoutTitle, "", new { @class = "help-block" })
             </div>
         </div>
 
         <div class="form-group">
-            @Html.LabelFor(model => model.Workout.Note, htmlAttributes: new { @class = "control-label col-md-2" })
+            @Html.LabelFor(model => model.Workout.WorkoutNote, htmlAttributes: new { @class = "control-label col-md-2" })
             <div class="col-md-10">
-                @Html.TextAreaFor(model => model.Workout.Note, new { @class = "form-control", @style = "width:100%" })
-                @Html.ValidationMessageFor(model => model.Workout.Note, "", new { @class = "help-block" })
+                @Html.TextAreaFor(model => model.Workout.WorkoutNote, new { @class = "form-control", @style = "width:100%" })
+                @Html.ValidationMessageFor(model => model.Workout.WorkoutNote, "", new { @class = "help-block" })
             </div>
         </div>
 
@@ -47,7 +47,7 @@
             @Html.LabelFor(model => model.Workout.CategoryId, htmlAttributes: new { @class = "control-label col-md-2" })
             <div class="form-inline">
                 <div class="col-md-10">
-                    @Html.DropDownListFor(model => model.Workout.CategoryId, new SelectList(Model.Categories, "CategoryId", "Title"), "select", new { @class = "form-control", @style = "width:80%" })
+                    @Html.DropDownListFor(model => model.Workout.CategoryId, new SelectList(Model.Categories, "CategoryId", "CategoryName"), "select", new { @class = "form-control", @style = "width:80%" })
                     <button type="button" class="btn btn-md btn-warning" data-assigned-id="1" data-toggle="modal" data-target="#categoriesModal" onclick="loadCategoriesModal()">
                         <span class="glyphicon glyphicon-plus"></span>
                     </button>

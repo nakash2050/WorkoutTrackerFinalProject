@@ -55,7 +55,7 @@ namespace WorkoutTracker.Web.Controllers
                 };
             }
 
-            return View("ViewAll", _workoutViewModel);
+            return PartialView("ViewAll", _workoutViewModel);
         }
 
         public ActionResult StartWorkout(int id)

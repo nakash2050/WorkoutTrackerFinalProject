@@ -36,7 +36,8 @@ namespace WorkoutTracker.BAL
         {
             using (var unitOfWork = new UnitOfWork(new WorkoutTrackerContext()))
             {
-                var result = unitOfWork.WorkoutCategory.GetAll().Select(Mapper.Map<WorkoutCategory, CategoryDTO>);
+                var result = unitOfWork.WorkoutCategory.GetAll().OrderByDescending(category => category.CategoryId)
+                    .Select(Mapper.Map<WorkoutCategory, CategoryDTO>);
                 return result;
             }
         }

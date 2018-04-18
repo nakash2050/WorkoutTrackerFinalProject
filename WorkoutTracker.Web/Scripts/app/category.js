@@ -29,7 +29,7 @@ function editCategory(categoryId) {
         btnEdit.addClass('btn-warning');
         spnTitle.removeAttr('contenteditable');
 
-        var request = { CategoryId: categoryId, Title: spnTitle.html() };
+        var request = { CategoryId: categoryId, CategoryName: spnTitle.html() };
         $.post('./Category/UpdateCategory', request, function (resp) {
             $('#categories').html(resp);
         });

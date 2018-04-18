@@ -27,7 +27,7 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "WorkoutTracker.Tests", "Wor
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WorkoutTracker.Tests", "WorkoutTracker.Tests\WorkoutTracker.Tests.csproj", "{299A3673-A040-4EE7-8351-4BA53518099E}"
 EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "WorkoutTracker.Web", "WorkoutTracker.Web", "{63E038A5-30B0-4400-BD65-D458C7D628D3}"
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "WorkoutTracker.MVC", "WorkoutTracker.MVC", "{63E038A5-30B0-4400-BD65-D458C7D628D3}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WorkoutTracker.Web", "WorkoutTracker.Web\WorkoutTracker.Web.csproj", "{A1CD064B-2849-451E-A369-44702E1DC8B0}"
 EndProject

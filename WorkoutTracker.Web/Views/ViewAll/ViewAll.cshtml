@@ -3,20 +3,23 @@
 @{
     ViewBag.Title = "View All";
 }
-<h4>View All</h4>
-<hr />
-@if (Model.Workouts != null && Model.Workouts.Count() > 0)
-{
-    foreach (var workout in Model.Workouts)
+<script src="~/Scripts/app/view-all.js"></script>
+<div id="workoutContainer">
+    <h4>View All</h4>
+    <hr />
+    @if (Model.Workouts != null && Model.Workouts.Count() > 0)
     {
-        <div class="panel panel-success">
-            <div class="panel-heading workout-panel-heading">@workout.WorkoutTitle</div>
-            <div class="panel-body">
-                <div>
-                    @Html.ActionLink("Edit", "EditWorkout", new { id = workout.WorkoutId }, new { @class = "btn btn-primary" })
-                    @Html.ActionLink("Delete", "DeleteWorkout", new { id = workout.WorkoutId }, new { @class = "btn btn-primary" })
+        foreach (var workout in Model.Workouts)
+        {
+            <div class="panel panel-success">
+                <div class="panel-heading workout-panel-heading">@workout.WorkoutTitle</div>
+                <div class="panel-body">
+                    <div>
+                        @Html.ActionLink("Edit", "EditWorkout", new { id = workout.WorkoutId }, new { @class = "btn btn-primary" })
+                        <button type="button" class="btn btn-primary" onclick="deleteWorkout(@workout.WorkoutId)">Delete</button>
+                    </div>
                 </div>
             </div>
-        </div>
+        }
     }
-}
+</div>
