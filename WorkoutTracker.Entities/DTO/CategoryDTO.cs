@@ -8,6 +8,7 @@ namespace WorkoutTracker.Entities.DTO
 
         [Required]
         [StringLength(64)]
+        [Display(Name = "Category Name")]
         public string CategoryName { get; set; }
     }
 }

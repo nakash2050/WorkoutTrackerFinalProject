@@ -1,0 +1,118 @@
+﻿@model WorkoutTracker.Web.ViewModels.WorkoutViewModel
+
+<script src="~/Scripts/app/create.js"></script>
+
+@{
+    ViewBag.Title = "Create";
+}
+
+<script>
+    function loadCategoriesModal() {
+        var id = $(this).data('assigned-id');
+        var route = '@Url.Action("CategoryModal", "Category")?id=1';
+        $('#partial').load(route);
+        $('#txtTitle').focus();
+    }
+
+    function reload() {
+        var req = '@Url.Action("GetAllCategories", "Category")';
+        $.get(req, function (resp) {
+            if (resp.categories) {
+                $('#Workout_CategoryId')
+                    .find('option')
+                    .remove()
+                    .end()
+                    .append('<option value="">select</option>')
+                    .val('');
+
+                $.each(resp.categories, function (index, category) {
+                    var key = category.CategoryId;
+                    var val = category.Title;
+
+                    $('#Workout_CategoryId')
+                        .append($("<option></option>")
+                        .attr("value", key)
+                        .text(val));
+                });
+            }
+        });
+    }
+</script>
+
+@using (Html.BeginForm())
+{
+    @Html.AntiForgeryToken()
+
+    <div class="form-horizontal">
+        <h4>Add Workout</h4>
+        <hr />
+        @Html.ValidationSummary(true, "", new { @class = "help-block" })
+        <div class="form-group">
+            @Html.LabelFor(model => model.Workout.WorkoutTitle, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.TextBoxFor(model => model.Workout.WorkoutTitle, new { @class = "form-control" })
+                @Html.ValidationMessageFor(model => model.Workout.WorkoutTitle, "", new { @class = "help-block" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.Workout.WorkoutNote, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.TextAreaFor(model => model.Workout.WorkoutNote, new { @class = "form-control", @style = "width:100%" })
+                @Html.ValidationMessageFor(model => model.Workout.WorkoutNote, "", new { @class = "help-block" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.Workout.CaloriesBurntPerMin, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="form-inline">
+                <div class="col-md-10">
+                    @Html.TextBoxFor(model => model.Workout.CaloriesBurntPerMin, new { @class = "form-control", @type = "number", @id = "caloriesburnt", @step = ".1", @Value = "0" })
+                    <button type="button" class="btn btn-md btn-warning" onclick="addCalories()">
+                        <span class="glyphicon glyphicon-plus"></span>
+                    </button>
+                    <button type="button" class="btn btn-md btn-warning" onclick="subtractCalories()">
+                        <span class="glyphicon glyphicon-minus"></span>
+                    </button>
+                    @Html.ValidationMessageFor(model => model.Workout.CaloriesBurntPerMin, "", new { @class = "help-block" })
+                </div>
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.Workout.CategoryId, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="form-inline">
+                <div class="col-md-10">
+                    @Html.DropDownListFor(model => model.Workout.CategoryId, new SelectList(Model.Categories, "CategoryId", "CategoryName"), "select", new { @class = "form-control", @style = "width:80%" })
+                    <button type="button" class="btn btn-md btn-warning" data-assigned-id="1" data-toggle="modal" data-target="#exampleModalLong" onclick="loadCategoriesModal()">
+                        <span class="glyphicon glyphicon-plus"></span>
+                    </button>
+                    @Html.ValidationMessageFor(model => model.Workout.CategoryId, "", new { @class = "help-block" })
+                </div>
+            </div>
+        </div>
+
+        <div class="form-group">
+            <div class="col-md-offset-2 col-md-10">
+                <input type="submit" value="Add Workout" class="btn btn-success btn-lg add-category" />
+                @if (ViewData["Message"] != null)
+                {
+                    <span class="pull-right workout-success">@ViewData["Message"]</span>
+                }
+            </div>
+        </div>
+    </div>
+}
+
+<div class="modal fade" id="exampleModalLong" tabindex="-1" role="dialog" aria-hidden="true" data-backdrop="static">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-body">
+                <div id="partial"></div>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary btn-danger" data-dismiss="modal" onclick="reload()">Close</button>
+            </div>
+        </div>
+    </div>
+</div>

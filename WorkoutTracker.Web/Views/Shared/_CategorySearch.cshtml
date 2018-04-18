@@ -1,0 +1,11 @@
+﻿@model WorkoutTracker.Web.ViewModels.CategoryViewModel
+
+<div class="form-inline">
+    <div>
+        @Html.TextBoxFor(model => model.Category.CategoryName, null, new { @class = "form-control input-md", @placeholder = "Enter a Category", @style = "width:90%", @id = "txtTitle" })
+        <button type="submit" class="btn btn-md btn-primary">
+            <span class="glyphicon glyphicon-plus"></span>
+        </button>
+        @Html.ValidationMessageFor(model => model.Category.CategoryName, "", new { @class = "help-block", @id="titleValidation" })
+    </div>
+</div>

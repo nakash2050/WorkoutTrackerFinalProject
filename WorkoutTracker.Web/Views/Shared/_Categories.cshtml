@@ -1,0 +1,19 @@
+﻿@model WorkoutTracker.Web.ViewModels.CategoryViewModel
+
+<div class="form-inline">
+    <div id="categories">
+        @if (Model != null && Model.Categories != null)
+        {
+            foreach (var category in Model.Categories)
+            {
+                <div class="alert alert-success">
+                    <span id="spnTitle_@category.CategoryId" class="category">@category.CategoryName</span>
+                    <div class="pull-right category-btns">
+                        <button id="btnEdit_@category.CategoryId" class="btn btn-sm btn-warning" onclick="editCategory('@category.CategoryId')">Edit</button>
+                        <button id="btnDelete_@category.CategoryId" class="btn btn-sm btn-danger" onclick="deleteCategory(@category.CategoryId)">Delete</button>
+                    </div>
+                </div>
+            }
+        }
+    </div>
+</div>

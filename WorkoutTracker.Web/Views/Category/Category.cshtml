@@ -1,0 +1,62 @@
+﻿@model WorkoutTracker.Web.ViewModels.CategoryViewModel
+
+@{
+    ViewBag.Title = "Category";
+}
+
+@Scripts.Render("~/bundles/jquery")
+<script src="~/Scripts/app/category.js"></script>
+<script>
+    $(document).ready(function () {
+        $('#categoryForm').submit(function (e) {
+            e.preventDefault();
+            var data = $(this).serialize();           
+
+            var actionUrl = '@Url.Action("CategoryModalAdd")';
+
+            $.post(actionUrl, data, function (resp) {
+                $('#txtTitle').val('');
+                $('#txtTitle').focus();
+               
+                if (typeof resp.errors != 'undefined') {
+                    $('#txtTitle').addClass('input-validation-error');
+                    console.log(resp.errors[0].ErrorMessage);
+                    $('#titleValidation').html(resp.errors[0].ErrorMessage);
+                    $('#titleValidation').removeClass('field-validation-valid').addClass('field-validation-error');
+                } else {
+                    $('#categories_container').html(resp);
+                    $('#titleValidation').html('');
+                }
+            })
+        });
+    });
+</script>
+<h4>Add Category</h4>
+<hr />
+<div>
+    <div class="input-group">
+        <span class="input-group-addon">
+            <i class="glyphicon glyphicon-search"></i>
+        </span>
+        <input type="text" class="form-control" placeholder="Search" id="search">
+    </div>
+    <br />
+    @if (Model != null && Model.IsModal)
+    {
+        using (Html.BeginForm("CategoryModalAdd", "Category", FormMethod.Post, new { @id = "categoryForm" }))
+        {
+            @Html.Partial("_CategorySearch", Model)
+        }
+    }
+    else
+    {
+        using (Html.BeginForm("Index", "Category", FormMethod.Post))
+        {
+            @Html.Partial("_CategorySearch", Model)
+        }
+    }
+    <br>
+    <div id="categories_container">
+        @Html.Partial("_Categories", Model)
+    </div>
+</div>

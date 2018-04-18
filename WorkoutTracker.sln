@@ -27,6 +27,10 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "WorkoutTracker.Tests", "Wor
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WorkoutTracker.Tests", "WorkoutTracker.Tests\WorkoutTracker.Tests.csproj", "{299A3673-A040-4EE7-8351-4BA53518099E}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "WorkoutTracker.Web", "WorkoutTracker.Web", "{63E038A5-30B0-4400-BD65-D458C7D628D3}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WorkoutTracker.Web", "WorkoutTracker.Web\WorkoutTracker.Web.csproj", "{A1CD064B-2849-451E-A369-44702E1DC8B0}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -57,6 +61,10 @@ Global
 		{299A3673-A040-4EE7-8351-4BA53518099E}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{299A3673-A040-4EE7-8351-4BA53518099E}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{299A3673-A040-4EE7-8351-4BA53518099E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A1CD064B-2849-451E-A369-44702E1DC8B0}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A1CD064B-2849-451E-A369-44702E1DC8B0}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A1CD064B-2849-451E-A369-44702E1DC8B0}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A1CD064B-2849-451E-A369-44702E1DC8B0}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -68,5 +76,6 @@ Global
 		{5077EAB9-95F1-43FB-8D13-C5CBF1581724} = {A75889E6-D070-49F2-9F0E-050A13CE9086}
 		{ABEC2B3B-4E39-4F8D-A4D1-CC3810077795} = {B6C031AE-8B00-4A88-8E08-3670E9E6E6BB}
 		{299A3673-A040-4EE7-8351-4BA53518099E} = {8B9B160F-D838-48D7-A85A-D1C547278E24}
+		{A1CD064B-2849-451E-A369-44702E1DC8B0} = {63E038A5-30B0-4400-BD65-D458C7D628D3}
 	EndGlobalSection
 EndGlobal
