@@ -1,0 +1,31 @@
+<div>
+  <div class="create-title">Edit Workout</div>
+  <br>
+  <div class="form-group" [class.has-error]="title.touched && title.errors?.required">
+    <label for="title" class="control-label">Title</label>
+    <input type="text" class="form-control" id="title" name="title" #title="ngModel" [(ngModel)]="workout.workoutTitle" required>
+    <span *ngIf="title.touched && title.errors?.required" class="help-block">Please enter a Title</span>
+  </div>
+  <div class="form-group" [class.has-error]="note.touched && note.errors?.required">
+    <label for="title" class="control-label">Note</label>
+    <textarea class="form-control" id="note" name="note" #note="ngModel" [(ngModel)]="workout.workoutNote" required></textarea>
+    <span *ngIf="note.touched && note.errors?.required" class="help-block">Please enter Note</span>
+  </div>
+  <div class="form-group" [class.has-error]="category.touched && category.errors?.required">
+    <label for="title" class="control-label">Category</label>
+    <div class="form-inline">
+      <select name="category" id="category" class="form-control" #category="ngModel" [(ngModel)]="workout.categoryId" style="width:90%" required>
+        <option value="">select category</option>
+        <option *ngFor="let category of categories" [value]="category.categoryId">{{ category.categoryName }}</option>
+      </select>
+      <button class="btn btn-md btn-primary" (click)="openModalWithComponent()">
+        <span class="glyphicon glyphicon-plus"></span>
+      </button>
+      <span *ngIf="category.touched && category.errors?.required" class="help-block">Please select a Category</span>
+    </div>
+  </div>
+  <div class="col-md-offset-4">
+    <button class="btn btn-lg btn-success add-category" (click)="update(workout)">Update</button>
+    <button class="btn btn-lg btn-danger add-category" (click)="cancel()">Cancel</button>
+  </div>
+</div>

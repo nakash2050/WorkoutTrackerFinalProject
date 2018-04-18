@@ -1,0 +1,35 @@
+<div>
+  <div class="create-title">Workout time of Day
+    <div class="pull-right">
+      <i class="glyphicon glyphicon-time"></i>
+      <span>{{ report.totalWorkoutTimeOfDay }} mins</span>
+    </div>
+  </div>
+  <br>
+  <div class="create-title">Workout time of Week
+    <div class="pull-right">
+      <i class="glyphicon glyphicon-time"></i>
+      <span>{{ report.totalWorkoutTimeOfWeek }} mins</span>
+    </div>
+  </div>
+  <br>
+  <div class="create-title">Workout time of Month
+    <div class="pull-right">
+      <i class="glyphicon glyphicon-time"></i>
+      <span>{{ report.totalWorkoutTimeOfMonth }} mins</span>
+    </div>
+  </div>
+  <br>
+  <div>
+    <canvas baseChart [datasets]="barChartWeekData" [labels]="barChartWeekLabels" [options]="barChartOptions" [legend]="barChartLegend"
+      [chartType]="barChartType" [colors]="chartColors"></canvas>
+  </div>
+  <div>
+    <canvas baseChart [datasets]="barChartMonthData" [labels]="barChartMonthLabels" [options]="barChartOptions" [legend]="barChartLegend"
+      [chartType]="barChartType" [colors]="chartColors"></canvas>
+  </div>
+  <div>
+    <canvas baseChart [datasets]="barChartYearData" [labels]="barChartYearLabels" [options]="barChartOptions" [legend]="barChartLegend"
+      [chartType]="barChartType" [colors]="chartColors"></canvas>
+  </div>
+</div>

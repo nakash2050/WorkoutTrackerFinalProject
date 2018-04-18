@@ -1,0 +1,11 @@
+.create-title {
+    padding: 10px;
+    background-color: #dfe3ee;
+    font-family: 'Oswald', sans-serif;
+    font-weight: bold;
+}
+
+.success-message {
+    color: #ff0000c9;
+    font-size: 15px;
+}

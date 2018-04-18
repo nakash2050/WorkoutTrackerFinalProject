@@ -1,0 +1,37 @@
+<div [class.modal-category]="!isValidRoute">
+  <div class="category-title">Add Category</div>
+  <br>
+  <div class="input-group">
+    <span class="input-group-addon">
+      <i class="glyphicon glyphicon-search"></i>
+    </span>
+    <input type="text" class="form-control" placeholder="Search" [(ngModel)]="search">
+  </div>
+  <br>
+  <form #form="ngForm" (ngSubmit)="form">
+    <div class="form-inline" [class.has-error]="category.touched && category.errors?.required">
+      <div>
+        <input type="text" name="categoryName" #category="ngModel" [(ngModel)]="mCategory" class="form-control" style="width:90%" placeholder="Category"
+          required maxlength="64">
+        <button class="btn btn-md btn-primary" (click)="submit(form)" [disabled]="category.invalid">
+          <span class="glyphicon glyphicon-plus"></span>
+        </button>
+        <span class="help-block" *ngIf="category.touched && category.errors?.required">Please enter a Category</span>
+      </div>
+    </div>
+  </form>
+  <br>
+  <div>
+    <div class="form-inline" *ngFor="let category of categories | categoryFilter:search">
+      <div>
+        <div class="alert alert-danger">
+          <span class="category" [class.category-focus]="category.isEdit" [id]="'spn' + category.categoryId" [attr.contenteditable]="category.isEdit" [(contentEditableModel)]="category.categoryName">{{ category.categoryName }}</span>          
+          <div class="pull-right category-btns">
+            <button class="btn btn-sm" [ngClass]="{'btn-warning': !category.isEdit, 'btn-success': category.isEdit}" (click)="isEditOrSave(category)">{{ category.isEdit ? 'Update' : 'Edit' }}</button>
+            <button class="btn btn-sm btn-danger" (click)="deleteCategory(category)">Delete</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

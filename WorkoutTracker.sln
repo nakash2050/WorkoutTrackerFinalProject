@@ -1,0 +1,72 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 14
+VisualStudioVersion = 14.0.25420.1
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "WorkoutTracker.Entities", "WorkoutTracker.Entities", "{6A3E5439-667D-4A39-B284-FDDB612A00C1}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WorkoutTracker.Entities", "WorkoutTracker.Entities\WorkoutTracker.Entities.csproj", "{940AA074-16C2-46A9-B4C3-44747ECDFABD}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "WorkoutTracker.DAL", "WorkoutTracker.DAL", "{3A4DFD4F-65CE-4493-BBE8-EDA310A17347}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WorkoutTracker.DAL", "WorkoutTracker.DAL\WorkoutTracker.DAL.csproj", "{A11A3D9F-5860-4653-A822-C332F82E2E01}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "WorkoutTracker.IRepository", "WorkoutTracker.IRepository", "{98AEC1E4-E44E-4E70-ABC0-ECD392FDEA3D}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WorkoutTracker.IRepositories", "WorkoutTracker.IRepositories\WorkoutTracker.IRepositories.csproj", "{90563596-1BB2-4631-BF7D-C86B3053ADAD}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "WorkoutTracker.BAL", "WorkoutTracker.BAL", "{A75889E6-D070-49F2-9F0E-050A13CE9086}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WorkoutTracker.BAL", "WorkoutTracker.BAL\WorkoutTracker.BAL.csproj", "{5077EAB9-95F1-43FB-8D13-C5CBF1581724}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "WorkoutTracker.API", "WorkoutTracker.API", "{B6C031AE-8B00-4A88-8E08-3670E9E6E6BB}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WorkoutTracker.API", "WorkoutTracker.API\WorkoutTracker.API.csproj", "{ABEC2B3B-4E39-4F8D-A4D1-CC3810077795}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "WorkoutTracker.Tests", "WorkoutTracker.Tests", "{8B9B160F-D838-48D7-A85A-D1C547278E24}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WorkoutTracker.Tests", "WorkoutTracker.Tests\WorkoutTracker.Tests.csproj", "{299A3673-A040-4EE7-8351-4BA53518099E}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{940AA074-16C2-46A9-B4C3-44747ECDFABD}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{940AA074-16C2-46A9-B4C3-44747ECDFABD}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{940AA074-16C2-46A9-B4C3-44747ECDFABD}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{940AA074-16C2-46A9-B4C3-44747ECDFABD}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A11A3D9F-5860-4653-A822-C332F82E2E01}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A11A3D9F-5860-4653-A822-C332F82E2E01}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A11A3D9F-5860-4653-A822-C332F82E2E01}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A11A3D9F-5860-4653-A822-C332F82E2E01}.Release|Any CPU.Build.0 = Release|Any CPU
+		{90563596-1BB2-4631-BF7D-C86B3053ADAD}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{90563596-1BB2-4631-BF7D-C86B3053ADAD}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{90563596-1BB2-4631-BF7D-C86B3053ADAD}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{90563596-1BB2-4631-BF7D-C86B3053ADAD}.Release|Any CPU.Build.0 = Release|Any CPU
+		{5077EAB9-95F1-43FB-8D13-C5CBF1581724}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5077EAB9-95F1-43FB-8D13-C5CBF1581724}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5077EAB9-95F1-43FB-8D13-C5CBF1581724}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5077EAB9-95F1-43FB-8D13-C5CBF1581724}.Release|Any CPU.Build.0 = Release|Any CPU
+		{ABEC2B3B-4E39-4F8D-A4D1-CC3810077795}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{ABEC2B3B-4E39-4F8D-A4D1-CC3810077795}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{ABEC2B3B-4E39-4F8D-A4D1-CC3810077795}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{ABEC2B3B-4E39-4F8D-A4D1-CC3810077795}.Release|Any CPU.Build.0 = Release|Any CPU
+		{299A3673-A040-4EE7-8351-4BA53518099E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{299A3673-A040-4EE7-8351-4BA53518099E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{299A3673-A040-4EE7-8351-4BA53518099E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{299A3673-A040-4EE7-8351-4BA53518099E}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{940AA074-16C2-46A9-B4C3-44747ECDFABD} = {6A3E5439-667D-4A39-B284-FDDB612A00C1}
+		{A11A3D9F-5860-4653-A822-C332F82E2E01} = {3A4DFD4F-65CE-4493-BBE8-EDA310A17347}
+		{90563596-1BB2-4631-BF7D-C86B3053ADAD} = {98AEC1E4-E44E-4E70-ABC0-ECD392FDEA3D}
+		{5077EAB9-95F1-43FB-8D13-C5CBF1581724} = {A75889E6-D070-49F2-9F0E-050A13CE9086}
+		{ABEC2B3B-4E39-4F8D-A4D1-CC3810077795} = {B6C031AE-8B00-4A88-8E08-3670E9E6E6BB}
+		{299A3673-A040-4EE7-8351-4BA53518099E} = {8B9B160F-D838-48D7-A85A-D1C547278E24}
+	EndGlobalSection
+EndGlobal

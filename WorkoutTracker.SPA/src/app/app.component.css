@@ -1,0 +1,15 @@
+.panel-heading {
+    font-family: 'Faster One', cursive;
+    background-color:  #6d84b4;
+    font-size: 30px;
+    text-align: center;
+}
+
+.navbar {
+    background-color: black;
+    padding: 10px;
+}
+
+.navbar a {
+    font-weight: bold;
+}

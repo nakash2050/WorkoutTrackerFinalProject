@@ -1,0 +1,23 @@
+.category-title {
+    padding: 10px;
+    background-color: #dfe3ee;
+    font-family: 'Oswald', sans-serif;
+    font-weight: bold;
+}
+
+.category {
+    font-family: 'Anton', sans-serif;  
+}
+
+.category-btns {
+    position: relative;
+    bottom:5px;
+}
+
+.modal-category {
+    padding: 10px;
+}
+
+.category-focus{
+    border: thin solid black;
+}

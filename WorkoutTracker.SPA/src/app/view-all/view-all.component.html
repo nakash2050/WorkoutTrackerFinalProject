@@ -1,0 +1,22 @@
+<div>
+  <div class="input-group">
+    <span class="input-group-addon">
+      <i class="glyphicon glyphicon-search"></i>
+    </span>
+    <input type="text" class="form-control" placeholder="Search" [(ngModel)]="search">
+  </div>
+  <br>
+  <div *ngFor="let workout of workouts | workoutFilter:search">
+    <div class="panel panel-danger">
+      <div class="panel-heading title">{{ workout.workoutTitle }}</div>
+      <div class="panel-body">
+        <div class="workout-init">
+          <button class="btn btn-primary btn-md" (click)="editWorkout(workout.workoutId)">Edit</button>
+          <button class="btn btn-primary btn-md" (click)="deleteWorkout(workout)">Delete</button>
+          <button class="btn btn-success btn-md" [disabled]="workout.status" (click)="start(workout.workoutId)">Start</button>
+          <button class="btn btn-danger btn-md" [disabled]="!workout.status" (click)="end(workout.workoutId)">End</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

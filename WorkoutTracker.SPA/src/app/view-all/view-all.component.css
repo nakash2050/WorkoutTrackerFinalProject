@@ -1,0 +1,12 @@
+.title {
+    font-family: 'Anton', sans-serif;
+}
+
+.workout-init {
+    display: flex;
+    justify-content: space-between;
+}
+
+.btn-md {
+    width: 100px;
+}

@@ -1,0 +1,29 @@
+<div>
+  <div class="create-title">End Workout</div>
+  <br>
+  <div>
+    <div class="form-group">
+      <label for="title" class="control-label">Title</label>
+      <input type="text" class="form-control" id="title" name="title" #title="ngModel" [(ngModel)]="workout.workoutTitle" disabled>
+    </div>
+    <div class="form-group">
+      <label for="title" class="control-label">Comment</label>
+      <textarea class="form-control" id="note" name="note" #note="ngModel" [(ngModel)]="workout.comment" maxlength="64"></textarea>
+    </div>
+    <div class="form-inlne">
+      <div class="form-group col-md-5" style="padding:0px">
+        <label for="title" class="control-label">End Date</label>
+        <input type="date" class="form-control" id="endDate" name="endDate" #endDate="ngModel" [ngModel]="workout.endDate | date:'yyyy-MM-dd'" required (ngModelChange)="workout.endDate = $event">
+      </div>
+      <div class="form-group col-md-offset-7">
+        <label for="title" class="control-label">End Time</label>
+        <input type="time" class="form-control" id="endTime" name="endTime" #endTime="ngModel" [ngModel]="workout.endTime" required (ngModelChange)="workout.endTime = $event">
+      </div>
+    </div>
+    <br>
+    <div class="col-md-offset-4">
+      <button class="btn btn-lg btn-success workout-btns" (click)="end(workout)">End</button>
+      <button class="btn btn-lg btn-danger workout-btns" (click)="cancel()">Cancel</button>
+    </div>
+  </div>
+</div>
