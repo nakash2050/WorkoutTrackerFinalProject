@@ -51,7 +51,7 @@
         <br />
         <div style="margin-left:150px">
             <input type="submit" value="Start" class="btn btn-success btn-lg add-category" />
-            <input type="submit" value="Cancel" class="btn btn-danger btn-lg add-category" />
+            @Html.ActionLink("Cancel", "Index", null, new { @class= "btn btn-danger btn-lg add-category" })
         </div>
 
     </div>

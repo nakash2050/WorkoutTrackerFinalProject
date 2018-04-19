@@ -17,8 +17,23 @@
                     <div class="workout-init">
                         @Html.ActionLink("Edit", "EditWorkout", new { id = workout.WorkoutId }, new { @class = "btn btn-primary btn-workout-md" })
                         <button type="button" class="btn btn-danger btn-workout-md" onclick="deleteWorkout(@workout.WorkoutId)">Delete</button>
-                        @Html.ActionLink("Start", "StartWorkout", new { id = workout.WorkoutId }, new { @class = "btn btn-success btn-workout-md" })
-                        @Html.ActionLink("End", "EditWorkout", new { id = workout.WorkoutId }, new { @class = "btn btn-warning btn-workout-md" })
+
+                        @if (workout.Status)
+                        {
+                            <button class="btn btn-success btn-workout-md disabled">Start</button>
+                        }
+                        else
+                        {
+                            @Html.ActionLink("Start", "StartWorkout", new { id = workout.WorkoutId }, new { @class = "btn btn-success btn-workout-md" })
+                        }
+                        @if (!workout.Status)
+                        {
+                            <button class="btn btn-warning btn-workout-md disabled">End</button>
+                        }
+                        else
+                        {
+                            @Html.ActionLink("End", "StartWorkout", new { id = workout.WorkoutId }, new { @class = "btn btn-warning btn-workout-md" })
+                        }
                     </div>
                 </div>
             </div>
