@@ -65,6 +65,7 @@ namespace WorkoutTracker.Web.Controllers
             var workout = Mapper.Map<WorkoutActiveViewModel>(workoutDTO);
             return View("Start", workout);
         }
+
         [HttpPost]
         public ActionResult StartWorkout(WorkoutActiveViewModel workoutModel)
         {
@@ -84,7 +85,26 @@ namespace WorkoutTracker.Web.Controllers
 
         public ActionResult EndWorkout(int id)
         {
-            return View();
+            var workoutDTO = _workoutBAL.GetWorkout(id);
+            var workout = Mapper.Map<WorkoutActiveViewModel>(workoutDTO);
+            return View("End", workout);
+        }
+
+        [HttpPost]
+        public ActionResult EndWorkout(WorkoutActiveViewModel workoutModel)
+        {
+            if (ModelState.IsValid)
+            {
+                workoutModel.Status = false;
+                var workoutActiveDTO = Mapper.Map<WorkoutActiveDTO>(workoutModel);
+                var result = _workoutBAL.EndWorkout(workoutActiveDTO);
+                if (result)
+                {
+                    return RedirectToAction("Index");
+                }
+            }
+
+            return RedirectToAction("EndWorkout", workoutModel.WorkoutId);
         }
 
         [HttpPost]

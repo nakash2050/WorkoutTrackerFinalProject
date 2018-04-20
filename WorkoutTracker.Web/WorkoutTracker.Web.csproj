@@ -177,8 +177,10 @@
     <Content Include="Scripts\app\category.js" />
     <Content Include="Scripts\app\create.js" />
     <Content Include="Scripts\app\edit-workout.js" />
+    <Content Include="Scripts\app\end-workout.js" />
     <Content Include="Scripts\app\global.js" />
     <Content Include="Scripts\app\start-workout.js" />
+    <Content Include="Scripts\app\track.js" />
     <Content Include="Scripts\app\view-all.js" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
@@ -186,6 +188,7 @@
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
+    <Content Include="Scripts\Chart.min.js" />
     <Content Include="Scripts\jquery-1.10.2.js" />
     <Content Include="Scripts\jquery-1.10.2.min.js" />
     <None Include="Scripts\jquery.validate-vsdoc.js" />
@@ -211,6 +214,7 @@
     <Content Include="Views\Create\Create.cshtml" />
     <Content Include="Views\ViewAll\Edit.cshtml" />
     <Content Include="Views\ViewAll\Start.cshtml" />
+    <Content Include="Views\ViewAll\End.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
