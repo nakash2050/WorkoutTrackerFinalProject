@@ -42,7 +42,7 @@ namespace WorkoutTracker.DAL.Migrations
 	                    GROUP BY DURATION
 
 	                    --Year
-	                    SELECT 'Y' + CAST(Duration AS VARCHAR) Duration, ISNULL(SUM(CaloriesBurnt),0) TotalCaloriesBurnt FROM 
+	                    SELECT 'M' + CAST(Duration AS VARCHAR) Duration, ISNULL(SUM(CaloriesBurnt),0) TotalCaloriesBurnt FROM 
 		                    (SELECT 
 			                    DATEPART(MONTH, start_date) Duration, 
 			                    (calories_burn_per_min * SUM(DATEDIFF(MINUTE, start_time, end_time))) CaloriesBurnt

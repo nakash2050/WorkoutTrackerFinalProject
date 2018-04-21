@@ -1,6 +1,9 @@
 ﻿@model WorkoutTracker.Web.ViewModels.WorkoutViewModel
 
-<script src="~/Scripts/app/create.js"></script>
+@section scripts
+{
+    <script src="~/Scripts/app/create.js"></script>
+}
 
 @{
     ViewBag.Title = "Create";
@@ -17,7 +20,7 @@
         <div class="form-group">
             @Html.LabelFor(model => model.Workout.WorkoutTitle, htmlAttributes: new { @class = "control-label col-md-2" })
             <div class="col-md-10">
-                @Html.TextBoxFor(model => model.Workout.WorkoutTitle, new { @class = "form-control" })
+                @Html.TextBoxFor(model => model.Workout.WorkoutTitle, new { @class = "form-control", @id = "txtTitle" })
                 @Html.ValidationMessageFor(model => model.Workout.WorkoutTitle, "", new { @class = "help-block" })
             </div>
         </div>

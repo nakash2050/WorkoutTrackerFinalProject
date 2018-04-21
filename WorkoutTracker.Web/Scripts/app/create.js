@@ -1,4 +1,9 @@
-﻿function addCalories() {
+﻿$(function () {
+    $('#txtTitle').focus();
+});
+
+
+function addCalories() {
     var oCalBurnt = $('#caloriesburnt');
     var calories;
 

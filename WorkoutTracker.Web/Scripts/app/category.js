@@ -2,13 +2,12 @@
     $("#search").keyup(function () {
         filterCategories();
     });
-}
-);
+    $('#txtTitle').focus();
+});
 
 function filterCategories(controllerName) {
     var title = $('#search').val();
     var route = getRoute() + 'CategoryFilter?title=' + title;
-    console.log(route);
     $.get(route, function (resp) {
         $('#categories').html(resp);
     });
@@ -32,7 +31,6 @@ function editCategory(categoryId) {
 
         var request = { CategoryId: categoryId, CategoryName: spnTitle.html() };
         var route = getRoute() + 'UpdateCategory';
-        console.log(route);
         $.post(route, request, function (resp) {
             $('#categories').html(resp);
         });
