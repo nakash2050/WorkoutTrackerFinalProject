@@ -54,7 +54,7 @@ namespace WorkoutTracker.Web.Controllers
         {
             if (Session["Categories"] != null)
             {
-                var categories = Session["categories"] as IEnumerable<CategoryDTO>;
+                var categories = Session["Categories"] as IEnumerable<CategoryDTO>;
                 var filteredCategories = categories.Where(category => category.CategoryName.ToLower().Contains(title.ToLower()));
                 _categoryViewModel = new CategoryViewModel() { Categories = filteredCategories };
             }

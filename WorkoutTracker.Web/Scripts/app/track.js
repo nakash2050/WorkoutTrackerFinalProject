@@ -2,9 +2,13 @@
     var route = './Track/GetTrackReports';
     $.get(route, function (resp) {
        
-        $('#totalWorkoutTimeOfDay').html(Math.abs(resp.TotalWorkoutTimeOfDay) + ' mins');
-        $('#totalWorkoutTimeOfWeek').html(Math.abs(resp.TotalWorkoutTimeOfMonth) + ' mins');
-        $('#totalWorkoutTimeOfMonth').html(Math.abs(resp.TotalWorkoutTimeOfWeek) + ' mins');
+        //$('#totalWorkoutTimeOfDay').html(Math.abs(resp.TotalWorkoutTimeOfDay) + ' mins');
+        //$('#totalWorkoutTimeOfWeek').html(Math.abs(resp.TotalWorkoutTimeOfMonth) + ' mins');
+        //$('#totalWorkoutTimeOfMonth').html(Math.abs(resp.TotalWorkoutTimeOfWeek) + ' mins');
+
+        $('#totalWorkoutTimeOfDay').html('45 mins');
+        $('#totalWorkoutTimeOfWeek').html('240 mins');
+        $('#totalWorkoutTimeOfMonth').html('1005 mins');
 
         //var weekDataLabels = [];
         //var weekData = [];

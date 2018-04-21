@@ -1,6 +1,7 @@
 ﻿using AutoMapper;
 using System.Collections.Generic;
 using System.Web.Mvc;
+using System.Linq;
 using WorkoutTracker.BAL;
 using WorkoutTracker.Entities.DTO;
 using WorkoutTracker.Web.ViewModels;
@@ -34,7 +35,21 @@ namespace WorkoutTracker.Web.Controllers
 
         public ActionResult Index()
         {
+            Session["Workouts"] = _workouts;
             return View("ViewAll", _workoutViewModel);
+        }
+
+        [HttpGet]
+        public ActionResult WorkoutFilter(string title)
+        {
+            if (Session["Workouts"] != null)
+            {
+                var workouts = Session["Workouts"] as IEnumerable<WorkoutDTO>;
+                var filteredWorkouts = workouts.Where(workout => workout.WorkoutTitle.ToLower().Contains(title.ToLower()));
+                _workoutViewModel = new WorkoutViewModel() { Workouts = filteredWorkouts };
+            }
+
+            return PartialView("_Workouts", _workoutViewModel);
         }
 
         public ActionResult EditWorkout(int id)
@@ -56,7 +71,7 @@ namespace WorkoutTracker.Web.Controllers
                 };
             }
 
-            return PartialView("ViewAll", _workoutViewModel);
+            return PartialView("_Workouts", _workoutViewModel);
         }
 
         public ActionResult StartWorkout(int id)

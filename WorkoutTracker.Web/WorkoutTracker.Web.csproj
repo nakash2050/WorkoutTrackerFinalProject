@@ -215,6 +215,7 @@
     <Content Include="Views\ViewAll\Edit.cshtml" />
     <Content Include="Views\ViewAll\Start.cshtml" />
     <Content Include="Views\ViewAll\End.cshtml" />
+    <Content Include="Views\Shared\_Workouts.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
