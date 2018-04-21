@@ -7,7 +7,7 @@ namespace WorkoutTracker.Entities.DTO
     {
         public int WorkoutId { get; set; }
 
-        [Required]
+        [Required(ErrorMessage = "Title is required")]
         [StringLength(128)]
         [Display(Name = "Title")]
         public string WorkoutTitle { get; set; }

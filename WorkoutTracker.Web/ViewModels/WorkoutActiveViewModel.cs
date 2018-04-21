@@ -1,5 +1,4 @@
-﻿
-using System;
+﻿using System;
 using System.ComponentModel.DataAnnotations;
 
 
@@ -9,7 +8,7 @@ namespace WorkoutTracker.Web.ViewModels
     {
         public int WorkoutId { get; set; }
 
-        [Required]
+        [Required(ErrorMessage = "Title is required")]
         [StringLength(128)]
         [Display(Name = "Title")]
         public string WorkoutTitle { get; set; }

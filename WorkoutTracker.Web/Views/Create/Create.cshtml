@@ -3,6 +3,7 @@
 @section scripts
 {
     <script src="~/Scripts/app/create.js"></script>
+    <script src="~/Scripts/app/category.js"></script>
 }
 
 @{
@@ -20,7 +21,7 @@
         <div class="form-group">
             @Html.LabelFor(model => model.Workout.WorkoutTitle, htmlAttributes: new { @class = "control-label col-md-2" })
             <div class="col-md-10">
-                @Html.TextBoxFor(model => model.Workout.WorkoutTitle, new { @class = "form-control", @id = "txtTitle" })
+                @Html.TextBoxFor(model => model.Workout.WorkoutTitle, new { @class = "form-control", @maxlength = "128" })
                 @Html.ValidationMessageFor(model => model.Workout.WorkoutTitle, "", new { @class = "help-block" })
             </div>
         </div>
@@ -28,7 +29,7 @@
         <div class="form-group">
             @Html.LabelFor(model => model.Workout.WorkoutNote, htmlAttributes: new { @class = "control-label col-md-2" })
             <div class="col-md-10">
-                @Html.TextAreaFor(model => model.Workout.WorkoutNote, new { @class = "form-control", @style = "width:100%" })
+                @Html.TextAreaFor(model => model.Workout.WorkoutNote, new { @class = "form-control", @style = "width:100%", @maxlength = "256" })
                 @Html.ValidationMessageFor(model => model.Workout.WorkoutNote, "", new { @class = "help-block" })
             </div>
         </div>

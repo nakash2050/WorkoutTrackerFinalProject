@@ -1,7 +1,6 @@
 ﻿function getRoute() {
     var route = '';
     var controllerName = $('#controller').val();
-    console.log(controllerName);
 
     switch (controllerName) {
         case "Category":

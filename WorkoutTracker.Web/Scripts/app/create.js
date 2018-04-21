@@ -1,5 +1,5 @@
 ﻿$(function () {
-    $('#txtTitle').focus();
+    $('#Workout_WorkoutTitle').focus();
 });
 
 

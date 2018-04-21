@@ -1,11 +1,4 @@
-﻿$(function () {
-    $("#search").keyup(function () {
-        filterCategories();
-    });
-    $('#txtTitle').focus();
-});
-
-function filterCategories(controllerName) {
+﻿function filterCategories(controllerName) {
     var title = $('#search').val();
     var route = getRoute() + 'CategoryFilter?title=' + title;
     $.get(route, function (resp) {

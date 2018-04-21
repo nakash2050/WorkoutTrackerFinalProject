@@ -4,13 +4,10 @@
     ViewBag.Title = "Edit";
 }
 
-<script src="~/Scripts/app/edit-workout.js"></script>
-
 @section scripts
 {
-    <script>
-       
-    </script>
+    <script src="~/Scripts/app/edit-workout.js"></script>
+    <script src="~/Scripts/app/category.js"></script>    
 }
 
 @using (Html.BeginForm("UpdateWorkout", "ViewAll", FormMethod.Post, new { @id = "formUpdate" }))

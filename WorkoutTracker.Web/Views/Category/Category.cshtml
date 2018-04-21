@@ -5,7 +5,11 @@
 }
 
 @Scripts.Render("~/bundles/jquery")
-<script src="~/Scripts/app/category.js"></script>
+
+@section scripts
+{
+    <script src="~/Scripts/app/category.js"></script>
+}
 <script>
     $(document).ready(function () {
         $('#categoryForm').submit(function (e) {
@@ -19,21 +23,27 @@
                 $('#txtTitle').focus();
 
                 if (typeof resp.errors != 'undefined') {
-                    $('#txtTitle').addClass('input-validation-error');
-                    console.log(resp.errors[0].ErrorMessage);
+                    $('#txtTitle').addClass('input-validation-error');                    
                     $('#titleValidation').html(resp.errors[0].ErrorMessage);
                     $('#titleValidation').removeClass('field-validation-valid').addClass('field-validation-error');
                 } else {
                     $('#categories_container').html(resp);
                     $('#titleValidation').html('');
+                    $('#txtTitle').val('').focus();
                 }
             })
         });
+
+        $("#search").keyup(function () {
+            filterCategories();
+        });
+
+        $('#txtTitle').focus();
     });
 </script>
 <h4>Add Category</h4>
 <hr />
-<div> 
+<div>
     <div class="input-group">
         <span class="input-group-addon">
             <i class="glyphicon glyphicon-search"></i>
